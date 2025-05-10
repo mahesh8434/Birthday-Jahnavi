@@ -57,7 +57,6 @@
       50% { transform: translateY(-10px); }
     }
 
-    /* Floating circles */
     .circle {
       position: absolute;
       border-radius: 50%;
@@ -75,6 +74,13 @@
         opacity: 0;
       }
     }
+
+    audio {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 10;
+    }
   </style>
 </head>
 <body>
@@ -84,6 +90,12 @@
     Wishing you a wonderful birthday filled with happiness and peace.<br>
     May this special day bring you joy and mark the beginning of another successful year in your life.
   </p>
+
+  <!-- Music Player -->
+  <audio controls autoplay>
+    <source src="https://www2.cs.uic.edu/~i101/SoundFiles/HappyBirthday.wav" type="audio/wav">
+    Your browser does not support the audio element.
+  </audio>
 
   <!-- Floating background bubbles -->
   <script>
