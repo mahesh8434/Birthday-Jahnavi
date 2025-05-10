@@ -22,32 +22,6 @@
       text-align: center;
     }
 
-    #overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 100vh;
-      width: 100vw;
-      background: rgba(0, 0, 0, 0.85);
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      z-index: 9999;
-    }
-
-    #overlay button {
-      margin-top: 20px;
-      padding: 12px 24px;
-      font-size: 18px;
-      background-color: #ff4081;
-      border: none;
-      border-radius: 10px;
-      color: white;
-      cursor: pointer;
-    }
-
     h1 {
       font-size: 3rem;
       margin-bottom: 0.5rem;
@@ -102,17 +76,14 @@
     }
 
     audio {
-      display: none;
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 10;
     }
   </style>
 </head>
 <body>
-  <!-- Tap to start overlay -->
-  <div id="overlay">
-    <h2>Tap to start the celebration!</h2>
-    <button onclick="start()">Start</button>
-  </div>
-
   <h1>Happy Birthday, Jahnavi!</h1>
   <div class="cake">🎂</div>
   <p>
@@ -120,17 +91,14 @@
     May this special day bring you joy and mark the beginning of another successful year in your life.
   </p>
 
-  <audio id="birthdaySong">
+  <!-- Music Player -->
+  <audio controls autoplay>
     <source src="https://www2.cs.uic.edu/~i101/SoundFiles/HappyBirthday.wav" type="audio/wav">
     Your browser does not support the audio element.
   </audio>
 
+  <!-- Floating background bubbles -->
   <script>
-    function start() {
-      document.getElementById("overlay").style.display = "none";
-      document.getElementById("birthdaySong").play();
-    }
-
     for (let i = 0; i < 20; i++) {
       const circle = document.createElement("div");
       circle.className = "circle";
